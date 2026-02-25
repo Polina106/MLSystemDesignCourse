@@ -5,19 +5,14 @@ from app.planner import MealPlanner
 
 
 # 1. Загружаем рецепты
-with open("app/data/recipes.json", "r", encoding="utf-8") as f:
-    recipes_data = json.load(f)
-
 recipes_df = pd.read_json(path_or_buf='app/data/recipes.jsonl', lines=True)
 
 print(pd.DataFrame(recipes_df)[:5])
 
-recipes_df = pd.DataFrame(recipes_data)
+recipes_df = pd.DataFrame(recipes_df)
 
 
 # 2. Загружаем пользователей
-# with open("app/data/users.json", "r", encoding="utf-8") as f:
-#     users_data = json.load(f)
 users_data = pd.read_json(path_or_buf='app/data/users.jsonl', lines=True)
 
 print(pd.DataFrame(users_data)[:5])
